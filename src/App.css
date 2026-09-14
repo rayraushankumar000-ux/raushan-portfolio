@@ -1,0 +1,52 @@
+/* ========================================
+   HERO PROFILE PHOTO
+======================================== */
+
+.profile-photo-wrapper {
+    position: absolute;
+    top: 8%;
+    right: 8%;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-photo {
+    width: 210px;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    border: 3px solid rgba(255, 255, 255, 0.85);
+    position: relative;
+    z-index: 2;
+}
+
+.profile-glow {
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: rgba(170, 255, 0, 0.18);
+    filter: blur(25px);
+    z-index: 1;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .profile-photo-wrapper {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 0 auto 30px;
+        order: -1;
+    }
+}
+/* ========================================
+   REMOVE HERO TOP GAP
+======================================== */
+

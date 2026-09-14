@@ -1,161 +1,175 @@
 export default function Hero() {
-  const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(
-        "rayraushankumar000@gmail.com"
-      );
+    const copyEmail = async () => {
+        try {
+            await navigator.clipboard.writeText(
+                "rayraushankumar000@gmail.com"
+            );
+            alert("Email copied!");
+        } catch {
+            console.log("Clipboard unavailable");
+        }
+    };
 
-      alert("Email copied!");
-    } catch {
-      console.log("Clipboard unavailable");
-    }
-  };
+    return (
+        <section className="hero section" id="home">
+            <div className="hero-grid">
 
-  return (
-    <section className="hero section" id="home">
-      <div className="hero-grid">
+                {/* LEFT SIDE */}
+                <div className="hero-copy reveal">
 
-        <div className="hero-copy reveal">
+                    <div className="eyebrow">
+                        <span className="pulse-dot"></span>
+                        Available for software engineering opportunities
+                    </div>
 
-          <div className="eyebrow">
-            <span className="pulse-dot"></span>
+                    <p className="hero-kicker">
+                        HELLO, I'M
+                    </p>
 
-            Available for software engineering opportunities
-          </div>
+                    <h1>
+                        Raushan Kumar <span>Ray.</span>
+                    </h1>
 
-          <p className="hero-kicker">
-            HELLO, I'M
-          </p>
+                    <p className="hero-role">
+                        Computer Science Student
+                        <b>·</b>
+                        MERN Stack Developer
+                    </p>
 
-          <h1>
-            Raushan Kumar <span>Ray.</span>
-          </h1>
+                    <p className="hero-description">
+                        I build clean, scalable web experiences and practical
+                        full-stack products using Java, JavaScript, React,
+                        Node.js and MongoDB.
+                    </p>
 
-          <p className="hero-role">
-            Computer Science Student
-            <b>·</b>
-            MERN Stack Developer
-          </p>
+                    <div className="hero-buttons">
+                        <a
+                            className="button primary"
+                            href="#projects"
+                        >
+                            Explore my work
+                            <span>↓</span>
+                        </a>
 
-          <p className="hero-description">
-            I build clean, scalable web experiences and practical
-            full-stack products using Java, JavaScript, React,
-            Node.js and MongoDB.
-          </p>
+                        <a
+                            className="button secondary"
+                            href="#contact"
+                        >
+                            Let's connect
+                            <span>↗</span>
+                        </a>
+                    </div>
 
-          <div className="hero-buttons">
-            <a
-              className="button primary"
-              href="#projects"
-            >
-              Explore my work
-              <span>↓</span>
-            </a>
+                    <div className="hero-meta">
 
-            <a
-              className="button secondary"
-              href="#contact"
-            >
-              Let's connect
-              <span>↗</span>
-            </a>
-          </div>
+                        <button
+                            className="email-copy"
+                            onClick={copyEmail}
+                        >
+                            rayraushankumar000@gmail.com
+                            <span>⧉</span>
+                        </button>
 
-          <div className="hero-meta">
+                        <div className="socials">
 
-            <button
-              className="email-copy"
-              onClick={copyEmail}
-            >
-              rayraushankumar000@gmail.com
-              <span>⧉</span>
-            </button>
+                            <a
+                                href="https://github.com/rayraushankumar000-ux"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                GH
+                            </a>
 
-            <div className="socials">
-              <a
-                href="https://github.com/rayraushankumar000-ux"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GH
-              </a>
+                            <a
+                                href="https://www.linkedin.com/in/raushan-kumar-ray-0a912932a/"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                in
+                            </a>
 
-              <a
-                href="https://www.linkedin.com/in/raushan-kumar-ray-0a912932a/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                in
-              </a>
+                            <a
+                                href="https://leetcode.com/u/raushan_rai2742/"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                LC
+                            </a>
 
-              <a
-                href="https://leetcode.com/u/raushan_rai2742/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LC
-              </a>
-            </div>
+                        </div>
+                    </div>
+                </div>
 
-          </div>
-        </div>
+                {/* RIGHT SIDE */}
+                <div className="hero-visual reveal delay-1">
 
-        <div className="hero-visual reveal delay-1">
+                    <div className="profile-photo-wrapper">
+                        <div className="profile-glow"></div>
 
-          <div className="orb orb-a"></div>
-          <div className="orb orb-b"></div>
+                        <img
+                            src="/profile.jpg"
+                            alt="Raushan Kumar Ray"
+                            className="profile-photo"
+                        />
 
-          <div className="code-card">
+                    </div>
 
-            <div className="window-bar">
-              <span></span>
-              <span></span>
-              <span></span>
+                    <div className="orb orb-a"></div>
+                    <div className="orb orb-b"></div>
 
-              <small>
-                raushan.js
-              </small>
-            </div>
+                    <div className="code-card">
 
-            <pre>
+                        <div className="window-bar">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                            <small>
+                                raushan.js
+                            </small>
+                        </div>
+
+                        <pre>
 {`const developer = {
+
   name: "Raushan",
   stack: ["React", "Node", "MongoDB"],
   language: "Java",
   focus: "DSA + Full Stack",
   status: "building 🚀"
+
 };
 
 developer.create();
 developer.learn();
 developer.repeat();`}
-            </pre>
+                        </pre>
 
-            <div className="code-footer">
-              <span>● 170+ LeetCode</span>
-              <span>● MERN</span>
+                        <div className="code-footer">
+                            <span>● 170+ LeetCode</span>
+                            <span>● MERN</span>
+                        </div>
+
+                    </div>
+
+                    <div className="floating-card float-one">
+                        <strong>7.34</strong>
+                        <span>Current CGPA</span>
+                    </div>
+
+                    <div className="floating-card float-two">
+                        <strong>450+</strong>
+                        <span>Coding problems</span>
+                    </div>
+
+                </div>
             </div>
 
-          </div>
+            <div className="scroll-cue">
+                SCROLL TO EXPLORE
+                <span>↓</span>
+            </div>
 
-          <div className="floating-card float-one">
-            <strong>7.24</strong>
-            <span>Current CGPA</span>
-          </div>
-
-          <div className="floating-card float-two">
-            <strong>450+</strong>
-            <span>Coding problems</span>
-          </div>
-
-        </div>
-
-      </div>
-
-      <div className="scroll-cue">
-        SCROLL TO EXPLORE
-        <span>↓</span>
-      </div>
-    </section>
-  );
+        </section>
+    );
 }

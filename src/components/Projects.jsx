@@ -13,6 +13,12 @@ const projects = [
     description:
       "A responsive platform for reporting, searching and tracking lost or found items with secure authentication.",
     number: "01",
+
+    // Real project screenshot
+    image: "/lost-found-project.png",
+
+    // Live website
+    liveLink: "https://lostfoundg47.netlify.app/",
   },
 
   {
@@ -27,6 +33,12 @@ const projects = [
     description:
       "A role-based healthcare application for patient records, appointments, CRUD operations and dashboard workflows.",
     number: "02",
+
+    // Project image
+    image: "/hospital-management-project.webp",
+
+    // Add live link later when available
+    liveLink: "",
   },
 ];
 
@@ -45,6 +57,7 @@ export default function Projects() {
   return (
     <section className="section" id="projects">
 
+      {/* SECTION HEADING */}
       <div className="section-heading reveal">
 
         <span className="section-number">
@@ -64,6 +77,8 @@ export default function Projects() {
 
       </div>
 
+
+      {/* TOOLBAR */}
       <div className="project-toolbar reveal">
 
         <p>
@@ -73,82 +88,129 @@ export default function Projects() {
 
         <div className="filter-buttons">
 
-          {["ALL", "REACT", "MONGODB"].map((item) => (
-            <button
-              key={item}
-              className={
-                filter === item ? "selected" : ""
-              }
-              onClick={() => setFilter(item)}
-            >
-              {item}
-            </button>
-          ))}
+          {["ALL", "REACT", "MONGODB"].map(
+            (item) => (
+              <button
+                key={item}
+                className={
+                  filter === item
+                    ? "selected"
+                    : ""
+                }
+                onClick={() =>
+                  setFilter(item)
+                }
+              >
+                {item}
+              </button>
+            )
+          )}
 
         </div>
 
       </div>
 
+
+      {/* PROJECTS */}
       <div className="projects-grid">
 
-        {visibleProjects.map((project, index) => (
+        {visibleProjects.map((project) => (
 
           <article
             className="project-card reveal"
             key={project.title}
           >
 
+            {/* NUMBER + TYPE */}
             <div className="project-top">
-              <span>{project.number}</span>
-              <span>{project.tag}</span>
+
+              <span>
+                {project.number}
+              </span>
+
+              <span>
+                {project.tag}
+              </span>
+
             </div>
 
+
+            {/* REAL PROJECT IMAGE */}
             <div className="project-preview">
 
-              <div className="mock-window">
+              <img
+                src={project.image}
+                alt={`${project.title} preview`}
+                className="project-image"
+              />
 
-                <div className="mock-nav">
+              {/* IMAGE OVERLAY */}
+              <div className="project-image-overlay">
 
-                  <b>●</b>
-                  <b>●</b>
-                  <b>●</b>
+                {project.liveLink ? (
 
-                  <span>
-                    {index === 0
-                      ? "items / dashboard"
-                      : "health / dashboard"}
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-view-button"
+                  >
+                    View Live ↗
+                  </a>
+
+                ) : (
+
+                  <span className="project-coming">
+                    Project Preview
                   </span>
 
-                </div>
-
-                <div className="mock-body">
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                </div>
+                )}
 
               </div>
 
             </div>
 
+
+            {/* PROJECT TITLE */}
             <h3>
               {project.title}
             </h3>
 
+
+            {/* DESCRIPTION */}
             <p>
               {project.description}
             </p>
 
+
+            {/* TECHNOLOGIES */}
             <div className="tech-list">
 
               {project.tech.map((tech) => (
+
                 <span key={tech}>
                   {tech}
                 </span>
+
               ))}
 
             </div>
+
+
+            {/* LIVE PROJECT LINK */}
+            {project.liveLink && (
+
+              <a
+                href={project.liveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-live-link"
+              >
+                Visit Live Project
+                <span>↗</span>
+              </a>
+
+            )}
 
           </article>
 
