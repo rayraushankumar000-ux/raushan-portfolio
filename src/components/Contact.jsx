@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const API =
-    "http://localhost:5000";
+    "https://raushan-portfolio-uz0b.onrender.com";
 
 export default function Contact({
     notify,

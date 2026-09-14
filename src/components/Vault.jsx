@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API = "http://localhost:5000";
+const API = "https://raushan-portfolio-uz0b.onrender.com";
 
 export default function Vault({ notify }) {
   const [token, setToken] = useState(
